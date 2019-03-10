@@ -15,7 +15,6 @@ export default function entitiesReducer(
   state: EntitiesState = {},
   action: EntityTypeActions | AnyAction,
 ) {
-  console.log(state, action);
   switch (action.type) {
     case EntitiesActionTypes.ADD_ENTITIY:
       return {
