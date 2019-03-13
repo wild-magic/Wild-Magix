@@ -19,6 +19,7 @@ export interface TypeAction<Type, Data> extends PayloadAction<Type, Data> {
 export enum EntitiesActionTypes {
   ADD_ENTITIY = 'ADD_ENTITY',
   UPDATE_ENTITY = 'UPDATE_ENTITY',
+  FLAG_UPDATED_ENTITY = 'FLAG_UPDATED_ENTITY',
   DELETE_ENTITY = 'DELETE_ENTITY',
 }
 
@@ -58,6 +59,17 @@ export const updateEntityAction: ActionCreator<UpdateEntityAction> = (
   payload: componentData,
 });
 
+export type FlagUpdatedEntityAction = EntityWithoutPayloadAction<
+  EntitiesActionTypes.FLAG_UPDATED_ENTITY
+>;
+
+export const flagUpdatedEntityAction: ActionCreator<
+  FlagUpdatedEntityAction
+> = uuid => ({
+  uuid,
+  type: EntitiesActionTypes.FLAG_UPDATED_ENTITY,
+});
+
 export type DeleteEntityAction = EntityWithoutPayloadAction<
   EntitiesActionTypes.DELETE_ENTITY
 >;
@@ -72,4 +84,5 @@ export const deleteEntityAction: ActionCreator<DeleteEntityAction> = (
 export type EntityTypeActions =
   | AddEntityAction
   | UpdateEntityAction
+  | FlagUpdatedEntityAction
   | DeleteEntityAction;

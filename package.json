@@ -1,6 +1,6 @@
 {
   "name": "wild-magix",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "A Redux action and reducer set to manage Entities and Components",
   "keywords": [
     "typescript",
