@@ -17,10 +17,10 @@ export interface TypeAction<Type, Data> extends PayloadAction<Type, Data> {
 }
 
 export enum EntitiesActionTypes {
-  ADD_ENTITIY = 'ADD_ENTITY',
-  UPDATE_ENTITY = 'UPDATE_ENTITY',
-  FLAG_UPDATED_ENTITY = 'FLAG_UPDATED_ENTITY',
-  DELETE_ENTITY = 'DELETE_ENTITY',
+  ADD_ENTITIY = '@WILD-MAGIX_ADD_ENTITY',
+  UPDATE_ENTITY = '@WILD-MAGIX_UPDATE_ENTITY',
+  FLAG_UPDATED_ENTITY = '@WILD-MAGIX_FLAG_UPDATED_ENTITY',
+  DELETE_ENTITY = '@WILD-MAGIX_DELETE_ENTITY',
 }
 
 export type AddEntityAction = EntityAction<
