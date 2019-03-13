@@ -6,6 +6,7 @@ const myDate = 1234567890123;
 jest.spyOn(Date, 'now').mockImplementation(() => myDate);
 
 import entitiesReducer from '../entities';
+import { EntitiesActionTypes } from '../../actions/entities';
 
 describe('entitiesReducer', () => {
   describe('UPDATE_ENTITIY action', () => {
@@ -14,6 +15,7 @@ describe('entitiesReducer', () => {
         banana: {
           uuid: 'banana',
           name: 'banana',
+          needsUpdating: false,
           components: [
             {
               name: 'RENDER_MESH',
@@ -47,7 +49,7 @@ describe('entitiesReducer', () => {
             },
           },
         },
-        type: 'UPDATE_ENTITY',
+        type: EntitiesActionTypes.UPDATE_ENTITY,
         uuid: 'banana',
       };
       expect(entitiesReducer(defaultState, action)).toHaveProperty('banana', {
