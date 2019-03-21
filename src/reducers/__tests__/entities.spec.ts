@@ -15,7 +15,6 @@ describe('entitiesReducer', () => {
         banana: {
           uuid: 'banana',
           name: 'banana',
-          needsUpdating: false,
           components: [
             {
               name: 'RENDER_MESH',
@@ -56,7 +55,6 @@ describe('entitiesReducer', () => {
         uuid: 'banana',
         name: 'banana',
         updatedAt: myDate,
-        needsUpdating: true,
         components: [
           {
             name: 'RENDER_MESH',

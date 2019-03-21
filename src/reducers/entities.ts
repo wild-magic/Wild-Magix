@@ -25,7 +25,6 @@ export default function entitiesReducer(
       const updatedEntity = {
         ...state[action.uuid],
         updatedAt: Date.now(),
-        needsUpdating: true,
         components: [
           ...state[action.uuid].components.reduce(
             (memo: Component<any>[], component: Component<any>) => {
@@ -48,14 +47,6 @@ export default function entitiesReducer(
       return {
         ...state,
         [action.uuid]: updatedEntity,
-      };
-    case EntitiesActionTypes.FLAG_UPDATED_ENTITY:
-      return {
-        ...state,
-        [action.uuid]: {
-          ...state[action.uuid],
-          needsUpdating: false,
-        },
       };
     case EntitiesActionTypes.DELETE_ENTITY:
       const { [action.uuid]: deletedEntity, ...rest } = state;
